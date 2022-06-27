@@ -15,8 +15,10 @@
 	<description>Example CRUD Service</description>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
+
 
 	<dependencies>
 		<dependency>
@@ -54,6 +56,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
