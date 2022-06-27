@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    image: mysql:5.7
+    container_name: mysql-image
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQLDB_ROOT_PASSWORD
+      - MYSQL_DATABASE=$MYSQLDB_DATABASE
+    ports:
+      - $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
+    volumes:
+      - ./data/logs:/logs
+      - ./usr/local/var/mysql:/var/lib/mysql
+  
+  api:
+    depends_on:
+      - mysqldb
+    links:
+      - mysqldb:mysqldb
+    container_name: api
+    image: studnent-service-img
+    build:
+      context: ./crud-service
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:8080
+    
