@@ -4,12 +4,6 @@
 2- Site accessible from url <b> http://localhost:8080 </b>
 
 
-### Mavn Command
-Go to crud-service and type below command 
-```bash
-mvn clean install -Dmaven.test.skip=ture 
-```
-
 ### Docker Compose Spring Boot and MySQL example
 Make suer your docker is up and runing on your local machine
 
