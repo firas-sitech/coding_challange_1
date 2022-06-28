@@ -19,15 +19,17 @@ The services can be run on the background with command:
 docker-compose up -d
 ```
 
-###Stop the System
+### Stop the System
 Stopping all the running containers is also simple with a single command:
 ```bash
 docker-compose down
 ```
 
-###Note 
+### Note 
 This application testn Windows you will may face issue related to .env file on iOS
 So replace docker-compose.yml content file with following code:
+
+
 ```bash
 version: "3.8"
 
