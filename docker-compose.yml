@@ -21,6 +21,7 @@ services:
     links:
       - mysqldb:mysqldb
     container_name: api
+    restart: on-failure
     image: studnent-service-img
     build:
       context: ./crud-service
